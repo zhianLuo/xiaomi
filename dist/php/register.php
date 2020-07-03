@@ -15,7 +15,7 @@ $link = mysqli_connect('localhost','root','123456','h5-2002');
 if (!$link) {
     die('连接失败：'.mysqli_connect_error());
 }
-echo "OK—数据库连接成功！";
+// echo "OK—数据库连接成功！";
 // 2.设置编码
 mysqli_set_charset($link,'utf8');
 
@@ -33,6 +33,6 @@ if (!$res) {
 // echo '添加成功！';
 
 // // 4.关闭数据库连接
-// mysqli_close($link);
+mysqli_close($link);
 
 ?>

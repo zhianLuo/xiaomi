@@ -21,6 +21,5 @@ $reg.click(function () {
   } else {
     //账号和密码都有输入时
     $zcxinxi.css('display', 'none');
-    /* 链接数据库 */
   }
 });

@@ -5,48 +5,32 @@
 /* 登录 */
 var login = document.querySelector('#login-btn');
 var box = document.querySelector('#error-box');
-var user = document.querySelector('#user');
-var pwd = document.querySelector('#pwd');
 
 login.onclick = function () {
-  var xhr = new XMLHttpRequest();
   var userVal = user.value;
   var pwdVal = pwd.value;
-  xhr.open('get', '../data/user.json', true);
-  xhr.send(null);
+  /* 基本逻辑 */
 
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4) {
-      if (xhr.status >= 200 && xhr.status < 300) {
-        var jsonObj = JSON.parse(xhr.responseText);
-        var temp = false;
-        var _user = '';
+  if (userVal == '' || pwdVal == '') {
+    //账号或密码未输入
+    event.preventDefault();
+    box.style.display = 'block';
+  } else {
+    //账号和密码都有输入时
+    box.style.display = 'none';
+  }
+}; // 
 
-        for (var key in jsonObj) {
-          if (userVal == key && pwdVal == jsonObj[key]) {
-            // console.log("请求成功")
-            temp = true;
-            _user = key;
-          }
-        }
 
-        if (temp) {
-          // console.log("账户密码正确");
-          window.location.href = './index.html';
-          /* 需要设置一个cookie 提供给index页面   */
+function set() {
+  var user = document.querySelector('#user');
+  var pwd = document.querySelector('#pwd');
+  setCookie({
+    key: "userName",
+    val: user.value,
+    day: 7,
+    path: "/"
+  });
+}
 
-          setCookie({
-            key: "userName",
-            val: _user,
-            days: 7,
-            path: '/'
-          });
-        } else {
-          box.style.display = 'block'; // console.log("账户或密码错误")
-        }
-      } else {
-        alert('数据请求失败');
-      }
-    }
-  };
-};
+;
