@@ -16,26 +16,25 @@
         <div class="layout">
             <div class="main_container">
                 <div class="external_logo_area">
-                    <a class="milogo" href="javascript:void(0)">
+                    <a class="milogo" href="./index.html">
                         <img src="../imgs/zcmi.png">
                     </a>
                 </div>
                 <div class="title-item">
                     <h4 class="title_big30">注册小米帐号</h4>
                 </div>
-                <div class="inpBox">
+                <form class="inpBox" method="get" action="../php/register.php">
                     <h5>账号：</h5>
-                    <input type="text" class="user" placeholder="请输入要注册的账号...">
+                    <input type="text" class="user" name="userName" placeholder="请输入要注册的账号...">
                     <h6>账号注册成功后，账号无法修改。</h6>
                     <h5>密码：</h5>
-                    <input type="text" class="pwd" placeholder="请输入密码...">
+                    <input type="password" class="pwd" name="passWord" placeholder="请输入密码...">
                     <h5 class="zcxinxi">
                         <i class="iconfont icon-tick"></i>
                         <span>账号密码不能为空！</span>
                     </h5>
-                    <input type="button" value="立 即 注 册" class="reg">
-
-                </div>
+                    <input type="submit" value="立 即 注 册" class="reg">
+                </form>
                 <div class="privacy_box">
                     已阅读同意：小米用户协议和隐私政策
                 </div>

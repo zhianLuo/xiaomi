@@ -40,6 +40,12 @@ task('data',async ()=>{
     .pipe(dest('./dist/data'))
     .pipe(load.connect.reload())//刷新
 })
+// 处理php
+task('php',async ()=>{
+    src('./src/php/*.*')
+    .pipe(dest('./dist/php'))
+    .pipe(load.connect.reload())//刷新
+})
 
 // 编译sass文件，转成纯css
 task('sass',async ()=>{
@@ -63,9 +69,10 @@ task('watch',async ()=>{
     watch('./src/imgs/*.*',series('img'));
     watch('./src/script/*.js',series('script'));
     watch('./src/font/*.css',series('font'));
-    watch('./src/font/*.*',series('data'));
+    watch('./src/data/*.*',series('data'));
+    watch('./src/php/*.*',series('php'));
     watch('./src/sass/*.scss',series('sass'));   
 })
 
 // 构建并启动项目，开发版本
-task('dev',series('del','html','img','script','font','data','sass','connect','watch'));
+task('dev',series('del','html','img','script','font','data','php','sass','connect','watch'));

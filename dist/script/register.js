@@ -13,15 +13,14 @@ var $reg = $('.reg');
 var $user = $('.user');
 var $pwd = $('.pwd');
 $reg.click(function () {
+  /* 基本逻辑 */
   if ($('.user').val() == '' || $('.pwd').val() == '') {
     //账号或密码未输入
+    event.preventDefault();
     $zcxinxi.css('display', 'block');
   } else {
     //账号和密码都有输入时
     $zcxinxi.css('display', 'none');
-    var text = $.ajax({
-      url: "../data/user.json",
-      async: false
-    }).responseText;
+    /* 链接数据库 */
   }
 });

@@ -649,56 +649,45 @@ button.swiper-pagination-bullet {
       width: 1226px;
       height: 460px;
       margin: 0 auto;
-      background: pink;
-      position: relative;
       /* 轮播图左侧导航按钮处理 */
-      /* 轮播图左上方的列表 */
-      /* .site-category {
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index: 200;
-                width: 234px;
-                height: 480px;
-
-                .categoryList {
-                    height: 440px;
-                    padding: 20px 0;
-                    padding: 20px 0;
-                    border: 0;
-                    color: #fff;
-                    background: rgba(105, 101, 101, .6);
-
-                    li {
-                        position: relative;
-
-                        &:hover {
-                            background: #FF6700;
-                        }
-
-                        a {
-                            display: block;
-                            padding-left: 30px;
-                            height: 42px;
-                            line-height: 42px;
-                            color: #fff;
-                        }
-
-                        i {
-                            position: absolute;
-                            // display: block;
-                            top: 12px;
-                            right: 20px;
-                            font-size: 16px;
-                            line-height: 16px;
-                            color: #e0e0e0;
-                        }
-                    }
-                }
-            } */ }
+      /* 轮播图左上方的列表 */ }
       #app .banner .swiper-container .swiper-wrapper .swiper-slide img {
         width: 1226px;
         height: 460px; }
+      #app .banner .swiper-container .swiper-button-prev {
+        left: 244px;
+        z-index: 100; }
+      #app .banner .swiper-container .site-category {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 200;
+        width: 234px;
+        height: 480px; }
+        #app .banner .swiper-container .site-category .categoryList {
+          height: 440px;
+          padding: 20px 0;
+          padding: 20px 0;
+          border: 0;
+          color: #fff;
+          background: rgba(105, 101, 101, 0.6); }
+          #app .banner .swiper-container .site-category .categoryList li {
+            position: relative; }
+            #app .banner .swiper-container .site-category .categoryList li:hover {
+              background: #FF6700; }
+            #app .banner .swiper-container .site-category .categoryList li a {
+              display: block;
+              padding-left: 30px;
+              height: 42px;
+              line-height: 42px;
+              color: #fff; }
+            #app .banner .swiper-container .site-category .categoryList li i {
+              position: absolute;
+              top: 12px;
+              right: 20px;
+              font-size: 16px;
+              line-height: 16px;
+              color: #e0e0e0; }
   #app .home-hero-sub {
     width: 1226px;
     height: 170px;

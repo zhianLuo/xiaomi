@@ -49,23 +49,4 @@ login.onclick = function () {
       }
     }
   };
-}; // 设置cookie
-
-
-function setCookie(options) {
-  if (!options.key || !options.val) {
-    throw new Error('设置失败，key和val是必填参数！');
-  }
-
-  options.domain = options.domain || '';
-  options.path = options.path || '';
-  options.days = options.days || 0;
-
-  if (options.days !== 0) {
-    var d = new Date();
-    d.setDate(d.getDate() + options.days);
-    document.cookie = options.key + '=' + escape(options.val) + '; domain=' + options.domain + '; path=' + options.path + '; expires=' + d;
-  } else {
-    document.cookie = options.key + '=' + escape(options.val) + '; domain=' + options.domain + '; path=' + options.path;
-  }
-}
+};

@@ -47,11 +47,12 @@ function getCookie(key) {
 } // 删除cookie
 
 
-function removeCookie(key) {
+function removeCookie(key, path) {
   setCookie({
     key: key,
     val: '1234',
-    days: -2
+    days: -8,
+    path: path
   });
 }
 /* ajax */

@@ -18,32 +18,36 @@ window.onload = function () {
     topbarLogined.style.display = "none";
   }
 };
+/* 登录跳转 */
+
 
 var login = document.querySelector('#login');
 
 login.onclick = function () {
   window.parent.location.href = './login.html';
 };
+/* 注册跳转 */
+
 
 var register = document.querySelector('#register');
 
 register.onclick = function () {
   window.parent.location.href = './register.html';
-}; // 获取cookie
+};
+/* 商品详情页跳转 */
 
 
-function getCookie(key) {
-  var arr1 = document.cookie.split('; '); //所有cookie分割出来的数组
+var miPhone = document.querySelector('#miPhone');
 
-  var arr2 = []; //每一个cookie分割出来的key和value
+miPhone.onclick = function () {
+  window.parent.location.href = './miPhones.html';
+};
+/* 退出登录 删除cookie并刷新页面*/
 
-  for (var i = 0, len = arr1.length; i < len; i++) {
-    arr2 = arr1[i].split('=');
 
-    if (arr2[0] === key) {
-      return unescape(arr2[1]);
-    }
-  }
+var logout = document.querySelector('#logout');
 
-  return null;
-}
+logout.onclick = function () {
+  removeCookie("userName", "/");
+  window.parent.location.href = './index.html';
+};
