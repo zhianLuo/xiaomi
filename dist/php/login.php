@@ -26,9 +26,8 @@ $result = mysqli_query($link,$sql);
 $arr = mysqli_fetch_array($result);
 
 if ($arr) {
-    echo "<script>alert('登录成功！');location.href = '../html/index.html';</script>";
-    /* echo "<script>alert('登录成功！'); setCookie({key:'userName',val".$userName.", day:7,path:"/"});location.href = '../html/index.html';</script>"; */
-    
+   $cookie =  setcookie("userName","$userName",time()+60*60*24,"/");
+    echo "<script>alert('登录成功！');location.href = '../html/index.html';</script>";  
 }else{
     echo "<script>alert('登录失败！');location.href = '../html/login.html';</script>";
 }

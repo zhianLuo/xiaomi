@@ -8,6 +8,7 @@ window.onload = function () {
   var miName = document.querySelector('#miName');
   var topbarInfo = document.querySelector('#topbar-info');
   var topbarLogined = document.querySelector('#topbar-info-logined');
+  console.log(user);
 
   if (user) {
     topbarInfo.style.display = "none";

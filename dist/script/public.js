@@ -106,18 +106,4 @@ function ajax(options) {
       }
     }
   };
-} // 
-
-
-function set() {
-  var user = document.querySelector('#user');
-  var pwd = document.querySelector('#pwd');
-  setCookie({
-    key: user.value,
-    val: pwd.value,
-    day: 7,
-    path: "/"
-  });
 }
-
-;
